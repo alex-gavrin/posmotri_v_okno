@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -42,12 +45,7 @@ ol {
   justify-content: center;
   align-items: flex-end;
   gap: 30px;
-  margin-inline-start: 30px;
-  margin-inline-end: 30px;
-  margin-block-start: 133px;
-  margin-block-end: 133px;
   inline-size: 1140px;
-  block-size: 534px;
 }
 
 .result {
@@ -96,6 +94,7 @@ ol {
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #FFF;
+  outline-offset: 1px;
 }
 
 .search-form__label:hover .search-form__label-text {
@@ -112,8 +111,8 @@ ol {
   white-space: nowrap;
 } 
 
-li:not(:last-child) {
-  padding-block-end: 30px;
+.content__list-item:not(:last-child) {
+  margin-block-end: 30px;
 }
 
 .content__video-card {
@@ -124,8 +123,8 @@ li:not(:last-child) {
 }
 
 .content__video-card-thumbnail {
-  inline-size: 194px;
-  block-size: 103px;
+  min-inline-size: 194px;
+  min-block-size: 103px;
   object-fit: cover;
   object-position: center;
 }
@@ -143,7 +142,6 @@ li:not(:last-child) {
 
 .content__list {
   block-size: 298px;
-  overflow-y: scroll;
   scrollbar-width: none;
   overflow: auto;
   position: relative;
@@ -175,6 +173,10 @@ li:not(:last-child) {
   font-size: 30px;
   font-weight: 400;
   text-transform: uppercase;
+  max-inline-size: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -266,11 +268,6 @@ fieldset {
   border: 1px solid #FFF;
   inline-size: 19px;
   block-size: 19px;
-}
-
-.search-form__label:has(:focus-visible) {
-  outline: 1px solid #FFF;
-  outline-offset: 1px;
 }
 
 .content__card-link_current {
